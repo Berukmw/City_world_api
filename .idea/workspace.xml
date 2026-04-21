@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e1ee6bc-ae0a-4aaa-8997-d0b76510ba88" name="Changes" comment="" />
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="b09abe25-d8f5-4f63-9c61-cd6d68537343" name="Changes" comment="" />
+>>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,12 +21,17 @@
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
     "state": "OPEN",
+<<<<<<< HEAD
     "assignee": "Berukmw"
+=======
+    "assignee": "gdzierzon"
+>>>>>>> origin/main
   }
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/gdzierzon/yearup-2026-spring-demos.git",
+<<<<<<< HEAD
     "accountId": "731ee943-a7d9-4bbe-acdb-c53223984488"
   }
 }]]></component>
@@ -33,12 +43,23 @@
   "associatedIndex": 7
 }]]></component>
   <component name="ProjectId" id="3C2Xo3hNVDh8jSBnYFVOqV12lJn" />
+=======
+    "accountId": "67242025-9956-43ef-a35b-21182db3108f"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3CUkbpSsegqbFAdweHeDUSEHuMZ" />
+>>>>>>> origin/main
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -79,10 +100,42 @@
       <option name="presentableId" value="Default" />
       <updated>1775584810888</updated>
       <workItem from="1775584812908" duration="4878000" />
+=======
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Pluralsight/yearup-2026-spring-demos",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b09abe25-d8f5-4f63-9c61-cd6d68537343" name="Changes" comment="" />
+      <created>1776447610017</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776447610017</updated>
+      <workItem from="1776447611239" duration="68000" />
+>>>>>>> origin/main
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+>>>>>>> origin/main
 </project>
