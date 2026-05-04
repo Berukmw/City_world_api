@@ -11,11 +11,16 @@ public class StoreApplication
 
     static void main()
     {
-        // make sure all products are loaded before we display the home screen
-        products = loadProducts();
 
-        // start the application
-        displayHomeScreen();
+        Double a = 5.5;
+        Double b = 5.5;
+
+        System.out.println((a.doubleValue() == b.doubleValue()) ?true: false);
+//        // make sure all products are loaded before we display the home screen
+//        products = loadProducts();
+//
+//        // start the application
+//        displayHomeScreen();
     }
 
     static void displayHomeScreen()
