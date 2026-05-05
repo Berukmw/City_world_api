@@ -12,6 +12,7 @@ public class Employee
     private String department;
     private double payRate;
     private double hoursWorked;
+    private int startTime = 0;
 
     // constructors
 
@@ -96,6 +97,36 @@ public class Employee
     public double getTotalPay()
     {
         return getRegularPay() + getOverTimePay();
+    }
+
+    // methods
+    public void punchIn(int hour)
+    {
+        if(hour < 1 || hour > 24){
+            throw new RuntimeException("Clock in time has to be between 1 and 24");
+        }
+
+        // punch in has to be at least
+        if(hour > 0)
+        {
+            startTime = hour;
+        }
+    }
+
+    public void punchOut(int hour)
+    {
+        if(startTime == 0){
+            throw new RuntimeException("Must clock in before you can clock out");
+        }
+
+        if(hour < 1 || hour > 24){
+            throw new RuntimeException("Clock out time has to be between 1 and 24");
+        }
+
+        // add the hours worked to the total time
+        hoursWorked += hour - startTime;
+        // reset the punch clock
+        startTime = 0;
     }
 
 }

@@ -38,10 +38,7 @@ public class Room
         return numberOfBeds;
     }
 
-    public double getPrice()
-    {
-        return price;
-    }
+    public double getPrice() { return price; }
     public void setPrice(double price)
     {
         this.price = price;
@@ -51,18 +48,10 @@ public class Room
     {
         return isOccupied;
     }
-    public void setOccupied(boolean occupied)
-    {
-        isOccupied = occupied;
-    }
 
     public boolean isDirty()
     {
         return isDirty;
-    }
-    public void setDirty(boolean dirty)
-    {
-        isDirty = dirty;
     }
 
 
@@ -70,5 +59,24 @@ public class Room
     public boolean isAvailable()
     {
         return !isOccupied && !isDirty;
+    }
+
+    // methods
+    public void checkIn()
+    {
+        isOccupied = true;
+        isDirty = true;
+    }
+
+    public void checkOut()
+    {
+        isOccupied = false;
+        // if someone was in the room we want to make sure that it is tagged as dirty on checkout
+        isDirty = true;
+    }
+
+    public void cleanRoom()
+    {
+        isDirty = false;
     }
 }
