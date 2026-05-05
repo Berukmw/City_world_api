@@ -12,6 +12,7 @@ public class Guest
     private String creditCardNumber;
     private LocalDate creditCardExpirationDate;
     private String creditCardCVV;
+    private boolean isVerified;
 
     // constructor(s)
     public Guest(String firstName, String lastName, int age)
@@ -60,6 +61,14 @@ public class Guest
         this.creditCardCVV = creditCardCVV;
     }
 
+    public boolean isVerified()
+    {
+        return isVerified;
+    }
+    public void setVerified(boolean verified)
+    {
+        isVerified = verified;
+    }
 
     // derived getter (derived property)
     public String getFullName()
@@ -67,4 +76,10 @@ public class Guest
         // use existing backing variables to calculate the return
         return this.firstName + " " + this.lastName;
     }
+
+    public boolean isAdult()
+    {
+        return age >= 18;
+    }
+
 }
