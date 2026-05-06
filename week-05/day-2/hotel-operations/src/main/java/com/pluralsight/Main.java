@@ -6,9 +6,9 @@ public class Main
 {
     static void main()
     {
-//        testRoomIsAvailable();
-//        testEmployeeWithoutOvertime();
-//        testEmployeeWithOvertime();
+        testRoomIsAvailable();
+        testEmployeeWithoutOvertime();
+        testEmployeeWithOvertime();
         testEmployeePunchInOutMethods();
     }
 

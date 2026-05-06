@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalTime;
+
 public class Employee
 {
     // constants
@@ -107,10 +109,11 @@ public class Employee
         }
 
         // punch in has to be at least
-        if(hour > 0)
-        {
-            startTime = hour;
-        }
+        startTime = hour;
+    }
+    public void punchIn()
+    {
+        LocalTime time = LocalTime.now();
     }
 
     public void punchOut(int hour)
