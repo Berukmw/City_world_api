@@ -8,7 +8,7 @@ public class BankAccount
     private String owner;
     private BigDecimal balance;
 
-    static private BigDecimal interestRate;
+    private static BigDecimal interestRate;
 
     public BankAccount(int accountNumber, String owner, BigDecimal startingBalance)
     {
