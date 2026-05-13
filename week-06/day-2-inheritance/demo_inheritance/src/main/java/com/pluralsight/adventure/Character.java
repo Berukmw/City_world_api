@@ -2,7 +2,9 @@ package com.pluralsight.adventure;
 
 public class Character
 {
-    protected static final int attackDamage = 10;
+    private static final int attackDamage = 10;
+    private int attackMultiplier = 1;
+    private int defenseMultiplier = 1;
 
     private String name;
     private int health;
@@ -30,9 +32,24 @@ public class Character
         return level;
     }
 
+    public int getAttackMultiplier()
+    {
+        return attackMultiplier;
+    }
+
+    public int getDefenseMultiplier()
+    {
+        return defenseMultiplier;
+    }
+
     public int getExperience()
     {
         return experience;
+    }
+
+    public int getAttackDamage()
+    {
+        return attackDamage * attackMultiplier * level;
     }
 
     public Character(String name, int health, int level, int experience)
@@ -43,6 +60,14 @@ public class Character
         this.experience = experience;
     }
 
+    public Character(String name, int health, int level, int experience, int attackMultiplier, int defenseMultiplier)
+    {
+        this(name, health, level, experience);
+
+        this.attackMultiplier = attackMultiplier;
+        this.defenseMultiplier = defenseMultiplier;
+    }
+
     public void attack(Character target)
     {
         if (isDefeated())
@@ -51,16 +76,18 @@ public class Character
             return;
         }
 
-        System.out.println(this.name + " attacks " + target.getName());
+        System.out.println(this.name + " attacks " + target.getName() + " with damage amount of " + getAttackDamage());
 
-        // Basic attack logic, e.g., reducing the target's health
-        int damage = attackDamage * level;
-        target.takeDamage(damage); // Example damage value
+        target.takeDamage(getAttackDamage()); // Example damage value
     }
 
     public void takeDamage(int damage)
     {
-        this.health -= damage;
+        // calculate damage with defenseMultiplier, damage must be at least 1
+        int actualDamage = damage / defenseMultiplier;
+        if(actualDamage < 1) actualDamage = 1;
+
+        this.health -= actualDamage;
         if (isDefeated())
         {
             health = 0;

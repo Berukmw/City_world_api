@@ -1,12 +1,14 @@
 package com.pluralsight.adventure;
 
+import javax.swing.plaf.metal.MetalButtonUI;
+
 public class Archer extends Character
 {
     private int arrows;
 
     public Archer(String name, int health, int level, int experience, int arrows)
     {
-        super(name, health, level, experience);
+        super(name, health, level, experience, 3, 2);
 
         this.arrows = arrows;
     }
@@ -21,17 +23,18 @@ public class Archer extends Character
     @Override
     public void attack(Character target)
     {
-        if(isDefeated())
-        {
-            System.out.println(getName() + " is dead and cannot attack.");
-        }
-        else if(arrows <= 0)
+        if(arrows <= 0)
         {
             System.out.println(getName() + " is out of arrows and cannot attack.");
+            return;
         }
 
-        arrows--;
-        int damage = attackDamage * 3 * getLevel();
-        target.takeDamage(damage);
+        super.attack(target);
+    }
+
+    @Override
+    public void specialAbility()
+    {
+        System.out.println(this.getName() + " is an archer who attacks by shooting arrows with an attack multiplier of " + getAttackMultiplier() + ", and attacks from distance and has a defenseMultiplier of " + getDefenseMultiplier());
     }
 }
