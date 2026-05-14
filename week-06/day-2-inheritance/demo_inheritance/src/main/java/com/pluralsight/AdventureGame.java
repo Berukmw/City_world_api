@@ -4,10 +4,17 @@ import com.pluralsight.adventure.Archer;
 import com.pluralsight.adventure.Character;
 import com.pluralsight.adventure.Knight;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+
 public class AdventureGame
 {
     public static void main(String[] args)
     {
+        ArrayList<String> names = new ArrayList<>();
+        System.out.println(names.get(2));
+
         Character character = new Character("Character", 50,1,100);
         Archer archer = new Archer("Archer", 50, 1, 100, 10);
         Knight knight = new Knight("Knight", 50, 1, 100, 2);
