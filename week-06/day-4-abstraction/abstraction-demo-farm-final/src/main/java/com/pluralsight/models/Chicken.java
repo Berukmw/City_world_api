@@ -1,4 +1,4 @@
-package com.pluralsight.farm.models;
+package com.pluralsight.models;
 
 public class Chicken extends FarmAnimal
 {

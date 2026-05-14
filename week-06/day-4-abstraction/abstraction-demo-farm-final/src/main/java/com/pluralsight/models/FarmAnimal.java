@@ -1,6 +1,6 @@
-package com.pluralsight.farm.models;
+package com.pluralsight.models;
 
-public class FarmAnimal implements Singable
+public class FarmAnimal
 {
     private String name;
     private String sound;
