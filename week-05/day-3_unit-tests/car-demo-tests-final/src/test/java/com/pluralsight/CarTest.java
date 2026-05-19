@@ -28,7 +28,7 @@ class CarTest
     @Test
     public void accelerate_should_capAt150()
     {
-        // arrange
+        // arrange - setup
         Car car = new Car("Volkswagen", "Passat");
 
         // act
@@ -38,5 +38,7 @@ class CarTest
         assertEquals(150, car.getSpeed(), "because I tried to accelerate to 250, and should have stopped at 150");
 
     }
+
+
 
 }
