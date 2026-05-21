@@ -11,13 +11,6 @@ public class MetalSummary
     {
     }
 
-    public MetalSummary(String name, String symbol, int atomicNumber, String color)
-    {
-        this.name = name;
-        this.symbol = symbol;
-        this.atomicNumber = atomicNumber;
-        this.color = color;
-    }
 
     public String getName()
     {

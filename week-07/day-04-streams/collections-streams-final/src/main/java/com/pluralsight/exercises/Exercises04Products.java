@@ -6,6 +6,7 @@ import com.pluralsight.models.OrderDetail;
 import com.pluralsight.models.Product;
 
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
 
 public class Exercises04Products
@@ -32,7 +33,14 @@ public class Exercises04Products
 
     public Product getMostExpensiveProduct()
     {
-        return null;
+        return products.stream()
+                //.sorted((a, b) -> -a.getPrice().compareTo(b.getPrice()))
+                .sorted(Comparator.comparing(Product::getPrice)
+                        .reversed())
+                .limit(1)
+                .toList()
+                .getFirst()
+                ;
     }
 
     public Product getLeastExpensiveProduct()

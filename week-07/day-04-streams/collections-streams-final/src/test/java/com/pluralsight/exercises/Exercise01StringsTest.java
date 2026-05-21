@@ -132,20 +132,36 @@ class Exercise01StringsTest
     void getFirstFiveNamesAlphabetically()
     {
         // arrange
+        String first = "Abigail";
+        String last = "Ava";
+
 
         // act
+        var result = exercises.getFirstFiveNamesAlphabetically();
 
         // assert
+        Assertions.assertEquals(first, result.getFirst(), "the first name was wrong");
+        Assertions.assertEquals(last, result.getLast(), "the last name was wrong");
+        Assertions.assertEquals(5, result.size(), "the result size failed");
+
     }
 
     @Test
     void getLastFiveNameAlphabetically()
     {
         // arrange
+        String first = "Wyatt";
+        String last = "Sofia";
+
 
         // act
+        var result = exercises.getLastFiveNameAlphabetically();
 
         // assert
+        Assertions.assertEquals(first, result.getFirst(), "the first name was wrong");
+        Assertions.assertEquals(last, result.getLast(), "the last name was wrong");
+        Assertions.assertEquals(5, result.size(), "the result size failed");
+
     }
 
     @Test

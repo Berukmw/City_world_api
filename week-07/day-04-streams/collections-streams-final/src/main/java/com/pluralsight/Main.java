@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Main
 {
@@ -21,6 +22,10 @@ public class Main
     {
         // setup
         metals = MetalsFileManager.loadMetals();
+
+        var eNames = searchNameByFirstLetter("e");
+
+        eNames.forEach(System.out::println);
 
     }
 
@@ -51,17 +56,25 @@ public class Main
 
     public static List<String> searchNameByFirstLetter(String letter)
     {
-        letter = letter.toLowerCase();
 
-        List<String> result = new ArrayList<>();
 
-        for(String name: names)
-        {
-            if(name.toLowerCase().startsWith(letter))
-            {
-                result.add(name);
-            }
-        }
+
+        var result = names.stream()
+                .filter(n -> n.toLowerCase().startsWith(letter.toLowerCase()))
+                .toList()
+                ;
+//
+//        letter = letter.toLowerCase();
+//
+//        List<String> result = new ArrayList<>();
+//
+//        for(String name: names)
+//        {
+//            if(name.toLowerCase().startsWith(letter))
+//            {
+//                result.add(name);
+//            }
+//        }
 
         return result;
 

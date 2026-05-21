@@ -1,6 +1,7 @@
 package com.pluralsight.exercises;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Exercise01Strings
@@ -92,12 +93,14 @@ public class Exercise01Strings
 
     public long getCountOfNames()
     {
-        return 0;
+        return names.size();
     }
 
     public List<String> getNamesThatStartWith(String letters)
     {
-        return null;
+        return names.stream()
+                .filter(n -> n.toLowerCase().startsWith(letters.toLowerCase()))
+                .toList();
     }
 
     public List<String> getSortedNames()
@@ -142,12 +145,19 @@ public class Exercise01Strings
 
     public List<String> getFirstFiveNamesAlphabetically()
     {
-        return null;
+        return names.stream()
+                .sorted()
+                .limit(5)
+                .toList();
     }
 
     public List<String> getLastFiveNameAlphabetically()
     {
-        return null;
+        return names.stream()
+//                .sorted((a, b) -> -a.compareTo(b))
+                .sorted(Comparator.reverseOrder())
+                .limit(5)
+                .toList();
     }
 
     public List<String> getUppercaseNames()

@@ -42,7 +42,17 @@ public class Exercise03Metals
 
     public List<MetalSummary> getMetalSummaries()
     {
-        return null;
+        return metals.stream()
+                //.map(m -> new MetalSummary(m.getName(), m.getSymbol(), m.getAtomicNumber(), m.getColor()))
+                .map(m -> (MetalSummary) new MetalSummary()
+                    {{
+                       setName(m.getName());
+                       setColor(m.getColor());
+                       setAtomicNumber(m.getAtomicNumber());
+                       setSymbol(m.getSymbol());
+                    }})
+                .toList()
+                ;
     }
 
     public List<MetalSummary> getMetalSummariesAlphabetized()
