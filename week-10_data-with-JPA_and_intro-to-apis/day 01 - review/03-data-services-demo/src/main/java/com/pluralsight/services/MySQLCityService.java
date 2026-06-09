@@ -15,6 +15,12 @@ public class MySQLCityService implements CityService
     }
 
     @Override
+    public City findById(int id)
+    {
+        return null;
+    }
+
+    @Override
     public List<City> searchByCountry(String country)
     {
         // user input validation
@@ -22,5 +28,11 @@ public class MySQLCityService implements CityService
         var result = cityDao.getCitiesByCountry(country);
 
         return result;//.stream().limit(20).toList();
+    }
+
+    @Override
+    public List<City> searchByState(String sate)
+    {
+        return List.of();
     }
 }

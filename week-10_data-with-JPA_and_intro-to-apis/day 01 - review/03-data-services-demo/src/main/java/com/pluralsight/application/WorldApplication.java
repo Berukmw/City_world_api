@@ -21,7 +21,27 @@ public class WorldApplication
 
     public void run()
     {
-        searchByCountry();
+        System.out.println();
+        System.out.println("1) search by id");
+        System.out.println("2) search by country");
+        System.out.println("3) search by state");
+        System.out.print("Enter an option: ");
+        int choice = Integer.parseInt(in.nextLine());
+
+        switch (choice)
+        {
+            case 1:
+                searchById();
+                break;
+            case 2:
+                searchByCountry();
+                break;
+            case 3:
+                searchByState();
+                break;
+            default:
+                System.out.println("Bad choice");
+        }
     }
 
     private void searchByCountry()
@@ -34,6 +54,30 @@ public class WorldApplication
         System.out.println();
         cities.forEach(city -> displayCity(city));
     }
+
+    private void searchByState()
+    {
+        System.out.print("Enter a state name: ");
+        String state = in.nextLine();
+
+        List<City> cities = cityService.searchByState(state);
+
+        System.out.println();
+        cities.forEach(city -> displayCity(city));
+    }
+
+    private void searchById()
+    {
+        System.out.print("Enter the city Id: ");
+        int id = Integer.parseInt(in.nextLine());
+
+        City city = cityService.findById(id);
+
+        System.out.println();
+        displayCity(city);
+    }
+
+
 
     private void displayCity(City city)
     {
