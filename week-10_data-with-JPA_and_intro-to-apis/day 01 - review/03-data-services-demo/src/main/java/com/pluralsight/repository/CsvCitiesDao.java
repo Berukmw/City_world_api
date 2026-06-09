@@ -21,6 +21,32 @@ public class CsvCitiesDao implements CitiesDao
     @Override
     public City getCityById(int id)
     {
+        try(FileInputStream stream = new FileInputStream(filePath);
+            Scanner scanner = new Scanner(stream))
+        {
+            scanner.nextLine(); // skip header
+
+            while(scanner.hasNext())
+            {
+                var line = scanner.nextLine();
+                var parts = line.trim().split("\\|");
+                var cityId = Integer.parseInt(parts[0].trim());
+                var name = parts[1];
+                var countryCode = parts[2];
+                var district = parts[3];
+                var population = Integer.parseInt(parts[4]);
+
+                if(cityId == id)
+                {
+                    return new City(cityId, name, countryCode, district, population);
+                }
+            }
+        }
+        catch(Exception e)
+        {
+
+        }
+
         return null;
     }
 

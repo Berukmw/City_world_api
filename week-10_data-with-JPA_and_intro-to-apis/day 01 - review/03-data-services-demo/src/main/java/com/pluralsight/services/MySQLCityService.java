@@ -17,7 +17,7 @@ public class MySQLCityService implements CityService
     @Override
     public City findById(int id)
     {
-        return null;
+        return cityDao.getCityById(id);
     }
 
     @Override
