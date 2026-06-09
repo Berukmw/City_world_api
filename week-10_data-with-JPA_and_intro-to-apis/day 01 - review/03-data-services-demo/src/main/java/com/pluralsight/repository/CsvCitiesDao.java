@@ -90,6 +90,6 @@ public class CsvCitiesDao implements CitiesDao
     @Override
     public List<City> getCitiesByState(String state)
     {
-        return List.of();
+        return null;
     }
 }
