@@ -90,6 +90,34 @@ public class CsvCitiesDao implements CitiesDao
     @Override
     public List<City> getCitiesByState(String state)
     {
-        return null;
+        List<City> cities = new ArrayList<>();
+
+        try(FileInputStream stream = new FileInputStream(filePath);
+            Scanner scanner = new Scanner(stream))
+        {
+            scanner.nextLine(); // skip header
+
+            while(scanner.hasNext())
+            {
+                var line = scanner.nextLine().trim();
+                var parts = line.split("\\|");
+                var id = Integer.parseInt(parts[0].trim());
+                var name = parts[1];
+                var countryCode = parts[2];
+                var district = parts[3];
+                var population = Integer.parseInt(parts[4]);
+
+                if(district.equalsIgnoreCase(state))
+                {
+                    cities.add(new City(id, name, countryCode, district, population));
+                }
+            }
+        }
+        catch(IOException e)
+        {
+
+        }
+
+        return cities;
     }
 }

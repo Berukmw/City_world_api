@@ -31,8 +31,8 @@ public class MySQLCityService implements CityService
     }
 
     @Override
-    public List<City> searchByState(String sate)
+    public List<City> searchByState(String state)
     {
-        return List.of();
+        return cityDao.getCitiesByState(state);
     }
 }
